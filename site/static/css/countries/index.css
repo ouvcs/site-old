@@ -1,0 +1,129 @@
+.search {
+    margin: 1%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 1% 5%;
+    background-color: #EBEDEF;
+    border-radius: 20px;
+}
+
+.search .search-button {
+    background-color: white;
+    padding: 1% 5%;
+    border-radius: 20px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.search .search-button:hover {
+    border-radius: 5px;
+}
+
+.search .search-input {
+    background-color: white;
+    padding: 1% 5%;
+    border: 0px solid black;
+    border-radius: 20px;
+    height: 25px;
+}
+
+.search .search-input:focus-visible, .search .search-input:hover {
+    border-radius: 5px;
+}
+
+.countries {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.country {
+    width: 75%;
+    margin-bottom: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1%;
+    background-color: #EBEDEF;
+    border-radius: 20px;
+    height: 260px;
+}
+
+.country .flag {
+    border-radius: 20px;
+    width: 40%;
+    margin-right: 30px;
+}
+
+.country .country-info {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.country .country-info .upper {
+    width: 100%;
+}
+
+.country .country-info .upper .name {
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.country .country-info .upper .name .check {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transform: translateY(5px);
+}
+
+.country .country-info .upper .name .check.full {
+    background-color: #32cd32;
+}
+.country .country-info .upper .name .check.partial {
+    background-color: yellow;
+}
+.country .country-info .upper .name .check.no {
+    background-color: #ff0000;
+}
+.country .country-info .upper .name .check.query {
+    background-color: #1e90ff;
+}
+
+.country .country-info .upper .desc {
+    inline-size: 370px;
+    overflow-wrap: break-word;
+    height: 170px;
+    overflow: hidden;
+    width: 100%;
+    font-size: 0.7em;
+}
+
+.country .country-info .upper .cid {
+    font-size: 14px;
+    color: #808080;
+    width: 100%;
+}
+
+.country .country-info .about {
+    border: 1px solid #808080;
+    border-radius: 20px;
+    padding: 5px 15px;
+    transition: 500ms;
+    color: gray;
+}
+
+.country .country-info .about:hover {
+    border: 1px solid #00000000;
+    background-color: #808080;
+    color: white;
+}

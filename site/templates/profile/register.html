@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block title %}Регистрация{% endblock %}
+
+{% block links %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/profile/index.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/profile/mobility.css') }}">
+{% endblock %}
+
+{% block body %}
+<form action="/profile/country/register" method="post" id="form">
+    <input type="hidden" name="uid" id="uid" value="{{ session['user_id'] }}">
+    <div class="container">
+        <div class="header">ID вашей страны<span>Маленькими английскими буквами Для пробелов тире</span></div><br>
+        <input type="text" name="id" id="id" placeholder="republic" required>
+    </div>
+    
+    <div class="container">
+        <div class="header">Сыллка на флаг<span>Сыллка должна оканчиватся на .png или .jpg</span></div><br>
+        <input type="text" name="flag" id="flag" placeholder="https://example.com/file.png" required>
+    </div>
+
+    <div class="container">
+        <div class="header">Название Страны<span></span></div><br>
+        <input type="text" name="name" id="name" placeholder="Республика" required>
+    </div>
+
+    <div class="container">
+        <div class="header">Сыллка на сообщество<span>В Телеграмме или Вконтакте</span></div><br>
+        <input type="text" name="group" id="group" placeholder="https://vk.com/durov" required>
+    </div>
+
+    <div class="container">
+        <div class="header">Форма правления<span></span></div><br>
+        <input list="goverment_type" id="goverment_type_check" name="goverment_type" placeholder="Выберите Форму правления">
+    </div>
+
+    <div class="container">
+        <div class="header">Устройство государства<span></span></div><br>
+        <input list="goverment_form" id="goverment_form_check" name="goverment_form" placeholder="Выберите Устройство государства">
+    </div>
+
+    <div class="container">
+        <div class="header">Идеология<span></span></div><br>
+        <input list="ideology" id="ideology_check" name="ideology" placeholder="Выберите идеологию">
+    </div>
+
+    <div class="container">
+        <div class="header">Политический режим<span></span></div><br>
+        <input list="political_type" id="political_type_check" name="political_type" placeholder="Выберете Политический режим">
+    </div>
+
+    <div class="container">
+        <div class="header">Дата основания<span></span></div><br>
+        <input type="date" name="date" id="date" required>
+    </div>
+
+    <div class="container">
+        <div class="header">Описание<span>Для кастомизации используется <a href="/markdown">MARKDOWN</a></span></div><br>
+        <textarea name="desc" id="desc" placeholder="Наша страна была основана..." rows="50" cols="50"></textarea>
+    </div>
+
+    <a onclick="reloadPrewiew()" class="prewiew-reload">Обновить</a>
+    <iframe src="/countries/prewiew?id=000000000&cid=0&flag=/static/images/country/profile.png&name=Неизвестно&group=https://vk.com/vgovernments&goverment_type=&goverment_form=&ideology=&political_type=&date=00.00.0000&desc=&check=query" frameborder="0" id="prewiew"></iframe>
+
+    <input type="submit" value="Отправить">
+    
+    <datalist id="goverment_type">
+        <option value="Президентская респубика">
+        <option value="Смешанная респубика">
+        <option value="Парламентская респубика">
+        <option value="Парламентская монархия">
+        <option value="Дуалистическая монархия">
+        <option value="Абсолютная монархия">
+        <option value="Однопартийная система">
+        <option value="Военная диктатура">
+    </datalist>
+    <datalist id="goverment_form">
+        <option value="Унитарная">
+        <option value="Федеративная">
+        <option value="Конфедеративная">
+    </datalist>
+    <datalist id="ideology">
+        <option value="Анархизм">
+        <option value="Консерватизм">
+        <option value="Неоконсерватизм">
+        <option value="Либерализм">
+        <option value="Неолиберализм">
+        <option value="Либертарианство">
+        <option value="Меритократия">
+        <option value="Религиозный фундаментализм">
+        <option value="Социальный дарвинизм">
+        <option value="Социал-демократия">
+        <option value="Социализм">
+        <option value="Коммунизм">
+        <option value="Фашизм">
+        <option value="Расизм">
+        <option value="Нацизм">
+        <option value="Национализм">
+        <option value="Шовинизм">
+        <option value="Гуманизм">
+        <option value="Феминизм">
+        <option value="Маскулизм">
+        <option value="Трансгуманизм">
+        <option value="Экологизм">
+        <option value="Отстуствует">
+    </datalist>
+    <datalist id="political_type">
+            <option value="Демократический">
+            <option value="Гибридный">
+            <option value="Авторитарный">
+            <option value="Тоталитарный">
+            <option value="Анархия">
+    </datalist>
+</form>
+
+<script src="{{ url_for('static', filename='js/register.js') }}"></script>
+{% endblock %}

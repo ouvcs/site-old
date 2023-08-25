@@ -1,0 +1,14 @@
+@media (max-width: 1050px) {
+    .country {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .side {
+        width: 80%;
+    }
+
+    .content {
+        width: 80%;
+    }
+}

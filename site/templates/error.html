@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Ошибка{% endblock %}
+
+{% block links %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/error/index.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/error/mobility.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="error">
+    <div class="error-desc">
+        <span class="error-num"><span>{{ error_number[0] }}</span><span>{{ error_number[1] }}</span><span>{{ error_number[2] }}</span></span>
+        {{ error_message }}
+    </div>
+    <a href="/" class="error-return">Вернутся?</a>
+    <a class="error-info" href="https://vk.com/write541161804" target="_blank">По ошибкам пишите сюда</a>
+</div>
+{% endblock %}

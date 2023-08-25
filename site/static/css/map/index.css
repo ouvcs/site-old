@@ -1,0 +1,10 @@
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+#map {
+    border: 0px;
+    width: 100%;
+    height: calc(100vh - var(--menu-height));
+}

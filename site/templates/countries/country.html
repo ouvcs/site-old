@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Страна{% endblock %}
+
+{% block links %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/country/index.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/country/mobility.css') }}">
+
+{% if prewiew %}<link rel="stylesheet" href="{{ url_for('static', filename='css/country/prewiew.css') }}">{% endif %}
+{% endblock %}
+
+{% block body %}
+{% if prewiew %}
+<div class="menu-p">
+    <a href="/" class="logo"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="OOVC"></a>
+    <div class="items">
+        <a class="item">Главная</a>
+        <a class="item">Страны</a>
+        <a class="item">Карта</a>
+        <a class="item">История</a>
+        <a class="item last"><img src="{{ session['photo'] }}"><div></div></a>
+    </div>
+</div>
+{% endif %}
+<div class="country">
+    <div class="content">
+        <div class="header">
+            <a href="{{ country['group'] }}" class="name">{{ country['name'] }}</a>
+            <img class="check {{ country['check'] }}" src="{{ url_for('static', filename='images/country/check/'+country['check']+'.png') }}" alt="check">
+        </div>
+        <div class="desc">
+             
+        </div>
+        <script>
+            var desc = "{{ country['desc'] }}";
+            var desc = desc.replaceAll("&lt;", "<").replaceAll("&gt;", ">")
+            document.querySelector(".desc").innerHTML = desc;
+        </script>
+    </div>
+    <div class="side">
+        <img src="{{ country['flag'] }}" alt="flag" class="flag">
+        <div class="ruler">
+            <img src="{{ ruler['photo'] }}" alt="photo" class="photo">
+            <div class="ruler-info">
+                <span>Правитель</span>
+                {% if session['user_id'] == country['id'] %}
+                    <div class="name">Вы</div>
+                {% else %}
+                    <div class="name">{{ ruler['name'] }}</div>
+                    <a href="{{ 'https://vk.com/write'+country['id'] }}" class="write">Связатся</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="country-info">
+            <div class="date">Основана {{ country['date'] }}</div>
+            <div class="goverment">{{ country['goverment_form'] }} {{ country['goverment_type'] }}</div>
+            <div class="political_type"><span>Политический режим: </span><span>{{ country['political_type'] }}</span></div>
+            <div class="ideology"><span>Идеология: </span><span>{{ country['ideology'] }}</span></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

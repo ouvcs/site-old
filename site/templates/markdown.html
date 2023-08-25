@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Markdown{% endblock %}
+
+{% block links %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/markdown/index.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/markdown/mobility.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="w">
+    <h1>Markdown</h1>
+    <h2>Заголовки</h2>
+    <div class="code"><span>#H1</span><h1>H1</h1></div>
+    <div class="code"><span>##H2</span><h2>H2</h1></div>
+    <div class="code"><span>###H3</span><h3>H3</h1></div>
+    <div class="code"><span>####H4</span><h4>H4</h1></div>
+    <div class="code"><span>#####H5</span><h5>H5</h1></div>
+    <div class="code"><span>######H6</span><h6>H6</h1></div>
+    <h2>Жирный текст</h2>
+    <div class="code"><span>**bold**</span><b>bold</b></div>
+    <h2>Курсивный текст</h2>
+    <div class="code"><span>*italic*</span><i>italic</i></div>
+    <h2>Зачеркнутый текст</h2>
+    <div class="code"><span>~~stroke~~</span><u>stroke</u></div>
+    <h2>Подсвеченый текст</h2>
+    <div class="code"><span>==hightlight==</span><mark>hightlight</mark></div>
+    <h2>Нижний текст</h2>
+    <div class="code"><span>H~2~O</span><div>H<sub>2</sub>O</div></div>
+    <h2>Верхний текст</h2>
+    <div class="code"><span>H^2^O</span><div>H<sup>2</sup>O</div></div>
+    <h2>Цитата</h2>
+    <div class="code"><span>> blockquote</span><blockquote>blockquote</blockquote></div>
+    <h2>Нумирируемый лист</h2>
+    <div class="code"><span>1. First item<br>2. Second item<br>3. Third item</span><ol><li>First item</li><li>Second item</li><li>Third item</li></ol></div>
+    <h2>Не нумирируемый лист</h2>
+    <div class="code"><span>- First item<br>- Second item<br>- Third item</span><ul><li>First item</li><li>Second item</li><li>Third item</li></ul></div>
+    <h2>Код</h2>
+    <div class="code"><span>`code`</span><ul><code>code</code></div>
+    <h2>Линия сепарации</h2>
+    <div class="code"><span>---</span><hr></div>   
+    <h2>Ссылка</h2>
+    <div class="code"><span>[title](https://example.com/)</span><a href="https://example.com/">title</a></div>
+    <h2>Картинка</h2>
+    <div class="code"><span>![alt text](https://example.com/image.jpg)</span><img src="https://example.com/image.jpg/"></div>
+    <h2>Емоджи</h2>
+    <div class="code"><span>:grinning_face:</span>😀</div>
+    <a href="https://emojipedia.org/">Всё id Емоджи можно найти здесь.</a>    
+</div>
+{% endblock %}

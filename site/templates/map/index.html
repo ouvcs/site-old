@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Карта{% endblock %}
+
+{% block links %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/map/index.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/map/mobility.css') }}">
+{% endblock %}
+
+{% block body %}
+<iframe src="https://cimengine.github.io/map/?id=vgovernments" title="Map" id="map"></iframe>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Страны{% endblock %}
+
+{% block links %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/countries/index.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/countries/mobility.css') }}">
+
+<script src="{{ url_for('static', filename='js/search.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+<div class="search">
+    <input type="text" class="search-input" placeholder="Введите имя страны...">
+    <div class="search-button" onclick="search()">
+        Поиск
+    </div>
+</div>
+<div class="countries">
+    {% for country in countries %}
+        <div class="country">
+            <img src="{{ country['flag'] }}" alt="flag" class="flag">
+            <div class="country-info">
+                <div class="upper">
+                    <div class="name">
+                        {{ country['name'] }}
+                        <img src="{{ url_for('static', filename='images/country/check/'+country['check']+'.png') }}" alt="check" class="check {{ country['check'] }}">
+                    </div>
+                    <div class="cid">ID: {{ country['cid'] }}</div>
+                    <div class="desc" id="{{ country['cid'] }}"></div>
+                    <script>
+                        var desc = "{{ country['desc'] }}";
+                        var desc = desc.replaceAll("&lt;", "<").replaceAll("&gt;", ">")
+                        document.querySelector(".desc#{{ country['cid'] }}").innerHTML = desc;
+                    </script>
+                </div>
+                <a href="/countries/{{ country['cid'] }}" class="about">Подробнее</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

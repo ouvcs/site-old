@@ -1,0 +1,57 @@
+@keyframes sideUp {
+    0% {
+        font-size: 0px;
+    }
+    100% {
+        font-size: 176px;
+    }
+}
+
+body {
+    height: 100vh;
+}
+
+.error {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: calc(100vh - var(--menu-height));
+}
+
+.error-desc {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.error-num {
+    font-size: 176px;
+    color: cornflowerblue;
+    animation: sideUp 1s ease-out;
+}
+
+.error-return {
+    background-color: lightblue;
+    padding: 20px;
+    margin-top: 5%;
+    border-radius: 10px;
+    transition: 500ms;
+}
+
+.error-return:hover {
+    border-radius: 20px;
+}
+
+.error-info {
+    margin-top: auto;
+    margin-bottom: 1%;
+}
+
+.error-num span {
+    transition: 1s;
+}
+
+.error-num span:hover {
+    color: hsl(219, 70%, 57%);
+}

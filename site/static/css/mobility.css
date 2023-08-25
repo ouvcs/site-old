@@ -1,0 +1,53 @@
+@media (max-width: 650px) {
+    .menu .logo {
+        height: 0px;
+        width: 0px;
+        opacity: 0;
+    }
+
+    .menu .items {  
+        width: 100%;
+        justify-content: space-around;
+    }
+    
+    .menu .item {
+        margin-right: 0px;
+    }
+
+    .menu .item.last {
+        margin-left: 0px;
+    }
+
+    .menu .last:hover div {
+        width: 0px;
+    }
+}
+
+@media (max-width: 460px) {
+    * {
+        --menu-height: 70px;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    .menu .item {
+        font-size: 14px;
+    }
+
+    .menu .last img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 350px) {
+    * {
+        --menu-height: 50px;
+    }
+
+    .menu .item {
+        font-size: 12px;
+    }
+}

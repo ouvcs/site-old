@@ -1,0 +1,40 @@
+@media (max-width: 900px) {
+    .countries {
+        flex-direction: column;
+    }
+
+    .country {
+        flex-direction: column;
+        height: 430px;
+        width: 90%;
+        margin-left: 1%;
+    }
+
+    .country .country-info {
+        width: 90%;
+    }
+
+    .country .country-info .about {
+        width: 90%;
+    }
+}
+
+@media (max-width: 750px) {
+    .country {
+        height: 350px;
+    }
+
+    .country .country-info .upper .name {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 350px) {
+    .search {
+        flex-direction: column;
+    }
+
+    .search .search-button, .search .search-input {
+        margin: 1%;
+    }
+}

@@ -1,0 +1,126 @@
+.country {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    margin-top: 1%;
+}
+
+.side {
+    width: 20%;
+    min-height: calc(89vh - var(--menu-height));
+    padding: 0% 2%;
+    margin: 0% 0.5%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.side .flag {
+    border-radius: 20px;
+    border: 1px solid gray;
+    width: 100%;
+}
+
+.side .ruler {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-top: 5px;
+    border-radius: 20px;
+    background-color: #EBEDEF;
+    height: 70px;
+    width: 100%;
+}
+
+.side .ruler .photo {
+    height: 100%;
+    border-radius: 50%;
+}
+
+.side .ruler-info .name {
+    font-weight: bold;
+}
+
+.side .country-info {
+    width: 100%;
+}
+
+.side .country-info .date {
+    margin-top: 5px;
+    padding: 15px 0px 10px 0px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: #EBEDEF;
+    text-align: center;
+    width: 100%;
+}
+
+.side .country-info .goverment {
+    padding: 10px 0px 15px 0px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #EBEDEF;
+    text-align: center;
+    width: 100%;
+}
+
+.side .country-info .political_type, .side .country-info .ideology {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap ;
+    margin-top: 5px;
+    border-radius: 20px;
+    background-color: #EBEDEF;
+    text-align: center;
+    width: 120%;
+    width: 100%;
+    padding: 15px 0px;
+}
+
+.side .country-info .political_type span:first-child, .side .country-info .ideology span:first-child {
+    font-weight: bold;
+}
+
+.content {
+    width: 70%;
+    padding: 0% 2%;
+    margin: 0% 0.5%;
+    min-height: calc(89vh - var(--menu-height));
+}
+
+.content .header {
+    margin-bottom: 10px;
+}
+
+.content .header .name {
+    font-size: 24px;
+}
+
+.content .header .check {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    border-radius: 50%;
+}
+
+.content .header .check.full {
+    background-color: limegreen;
+}
+.content .header .check.partial {
+    background-color: yellow;
+}
+.content .header .check.no {
+    background-color: #ff0000;
+}
+.content .header .check.query {
+    background-color: #1e90ff;
+}
+
